@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11851,14 +11851,14 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
 <span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
@@ -11890,8 +11890,8 @@ div#notebook {
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Statistics for Boston housing dataset:
 
-Minimum price: $1,024,800.00
-Maximum price: $105,000.00
+Minimum price: $105,000.00
+Maximum price: $1,024,800.00
 Mean price: $454,342.94
 Median price $438,900.00
 Standard deviation of prices: $165,171.13
@@ -11925,7 +11925,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Increase in RM might result in increase in MEDV as a home with high RM is worth more. Increase in LSTAT feature might result in decrease in MEDV.This is because the homes where the homeowners are working poor may be worth less. Increase in PTRATIO might result in decrease in MEDV file.</p>
+<p><strong>Answer: </strong> Increase in RM might result in increase in MEDV as a home with high RM is worth more. Increase in LSTAT feature might result in decrease in MEDV.This is because the homes where the homeowners are working poor may be worth less. Increase in PTRATIO might result in decrease in MEDV file.A higher PTRATIO might indicate that the schools may have been located in inner urban areas where the homes may be of less worth.</p>
 
 </div>
 </div>
@@ -12130,7 +12130,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Splitting a dataset into training and testing subsets will help us evaluate the model and perform tuning. Basically need to verify if the model is working fine. The split will also help determine bias &amp; variance situations for the model</p>
+<p><strong>Answer: </strong> Splitting a dataset into training and testing subsets will help us evaluate the model and perform tuning. Basically need to verify if the model is working fine. The split will also help determine bias &amp; variance situations for the model. Testing data will help us determine how the model behaves with previously unseen data i.e. how best it generalizes to new data.If trained and tested on the same data, the model might perform fine but we will know how it performs to new data i.e. how better it generalizes.</p>
 
 </div>
 </div>
@@ -14548,7 +14548,7 @@ rIk5rJmZmZk1MYc1MzMzsyb2Py/344CQZDJOAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Model with max depth of 1 suffers from high bias, reason being both converged but high values. Model with max depth of 10 suffers from high variance as there is large gap testing and training error</p>
+<p><strong>Answer: </strong> Model with max depth of 1 suffers from high bias, reason being both converged but there is no consistent gap between training and testing errors hence the model still needs to learn more. Model with max depth of 10 suffers from high variance as there is large gap testing and training error</p>
 
 </div>
 </div>
@@ -14568,7 +14568,7 @@ rIk5rJmZmZk1MYc1MzMzsyb2Py/344CQZDJOAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Model with max depth of 1 best generalizes to unseen data as the gap between the training and testing sets is small</p>
+<p><strong>Answer: </strong> Model with max depth of 4 best generalizes to unseen data as the gap between the training and testing sets is not large or not so small. The Training and Testing score started diverging after this point.</p>
 
 </div>
 </div>
@@ -14599,7 +14599,7 @@ rIk5rJmZmZk1MYc1MzMzsyb2Py/344CQZDJOAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Grid search is a way to verify which set of parameters work best for the machine learning model in a systematic way</p>
+<p><strong>Answer: </strong> Grid search is a way to verify which set of parameters work best for the machine learning model in a systematic way. The model evaluates the performance by checking each combination (outer or Cartesian product of the matrix) one at a time. During the process, the model checks this for all the parameters. For each of the parameter combinations, during the grid search it checks the the performance using cross-validation by calculating the score and picks the combination having the best performance metric.</p>
 
 </div>
 </div>
@@ -14620,7 +14620,7 @@ rIk5rJmZmZk1MYc1MzMzsyb2Py/344CQZDJOAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Instead of splitting the dataset into test and training, in  k-fold cross-validation the data set is split into k-folds.k experiments will be executed in which 1 fold in each experiment will be testing set and remaining is training set. After all k experiments were executed the performance is represented by taking the average performance from all experiments. During grid search,each of the parameters for the model is verified using cross validation and the best parameters will be used. If cross-validation is not used for grid search, then the best parameters may not be selected as some data points will not be used for training, these data points were left out in testing.</p>
+<p><strong>Answer: </strong> Instead of splitting the dataset into test and training, in  k-fold cross-validation the data set is split into k-folds.k experiments will be executed in which 1 fold in each experiment will be testing set and remaining is training set. After all k experiments were executed the performance is represented by taking the average performance from all experiments. Please note that each fold is used exactly once for testing. During grid search,each of the parameters for the model is verified using cross validation and the best parameters will be used. If cross-validation is not used for grid search, then the best parameters may not be selected as some data points will not be used for training, these data points were left out in testing.</p>
 
 </div>
 </div>
@@ -14751,7 +14751,7 @@ rIk5rJmZmZk1MYc1MzMzsyb2Py/344CQZDJOAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong>The maximum depth for the optimal model is 4. This seems to be different that what we had guessed in Question 6</p>
+<p><strong>Answer: </strong>The maximum depth for the optimal model is 4. This seems to be same to that of what we had guessed in Question 6</p>
 
 </div>
 </div>
@@ -14840,6 +14840,9 @@ Predicted selling price for Client 3&#39;s home: $942,666.67
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>Client 1's home: $391,183.33,Client 2's home: $189,123.53 and Client 3's home: $942,666.67.These prices seem to be reasonable based on the number of rooms, neighborhood poverty level and Student-teacher ratio. Higher rooms, lower poverty level and lower student-teacher ratio result in higher selling price.</p>
+<p>For Client 1, the predicted selling price is higher side owing to the fact that number of rooms is more, neighborhood poverty level is low and Student-teacher ratio is low. Also the predicted selling price seems to be near to median price and falling between min and max price</p>
+<p>For Client 2, the predicted selling price is lower side owing to the fact that number of rooms is low, neighborhood poverty level is very high and Student-teacher ratio is also high. Also the predicted selling price seems to be near to minimum price although not as near and this is falling between min and max price.</p>
+<p>For Client 3, the predicted selling price is highest of all three, this is owing to the fact that number of rooms is highest of all threee, neighborhood poverty level is very low and Student-teacher ratio is also low. Also the predicted selling price seems to be near to maximum price and this is falling between min and max price.</p>
 
 </div>
 </div>
@@ -14921,6 +14924,7 @@ Range in prices: $69,044.61
 <li>Is the model robust enough to make consistent predictions? - Yes, the model is robust enough to make consistent predictions</li>
 <li>Would data collected in an urban city like Boston be applicable in a rural city? - Data collected in urban city might not be applicable for rural city, reason being all the different parameter values may be different along with selling prices.</li>
 </ul>
+<p>Hence the constructed model should not be used in the real-world setting. Models relevant to be used in real-world setting at the very least need to use most relevant data for model construction.</p>
 
 </div>
 </div>
